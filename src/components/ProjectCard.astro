@@ -1,13 +1,19 @@
 ---
-const { title, description, tags = [], icon, colorClass = 'default' } = Astro.props;
+const { title, description, tags = [], icon, colorClass = 'default' } = Astro.props as {
+  title: string;
+  description: string;
+  tags?: string[];
+  icon: string;
+  colorClass?: string;
+};
 
-const colorMap = {
-  blue:   { bg: 'linear-gradient(135deg, #1a1a2e, #16213e)', icon: 'rgba(196, 240, 77, 0.12)' },
-  red:    { bg: 'linear-gradient(135deg, #1a0a0a, #2d1515)', icon: 'rgba(255, 107, 107, 0.12)' },
-  green:  { bg: 'linear-gradient(135deg, #0a1a0a, #152d15)', icon: 'rgba(77, 240, 150, 0.12)' },
-  orange: { bg: 'linear-gradient(135deg, #1a100a, #2d2015)', icon: 'rgba(240, 180, 77, 0.12)' },
-  purple: { bg: 'linear-gradient(135deg, #150a1a, #25152d)', icon: 'rgba(200, 130, 255, 0.12)' },
-  default:{ bg: 'linear-gradient(135deg, #1a1a2e, #16213e)', icon: 'rgba(196, 240, 77, 0.12)' },
+const colorMap: Record<string, { bg: string; well: string }> = {
+  blue:    { bg: 'linear-gradient(135deg, #eef1ff, #e3e9fb)', well: 'rgba(108, 140, 255, 0.16)' },
+  red:     { bg: 'linear-gradient(135deg, #fdeeee, #fbe3e3)', well: 'rgba(255, 107, 107, 0.16)' },
+  green:   { bg: 'linear-gradient(135deg, #eafaf0, #e0f5e9)', well: 'rgba(77, 200, 130, 0.18)' },
+  orange:  { bg: 'linear-gradient(135deg, #fdf3e6, #faecd8)', well: 'rgba(220, 150, 40, 0.16)' },
+  purple:  { bg: 'linear-gradient(135deg, #f6eefd, #efe3fb)', well: 'rgba(200, 130, 255, 0.16)' },
+  default: { bg: 'linear-gradient(135deg, #f0f4e3, #e8f1cf)', well: 'rgba(163, 204, 46, 0.20)' },
 };
 
 const colors = colorMap[colorClass] || colorMap.default;
@@ -15,12 +21,12 @@ const colors = colorMap[colorClass] || colorMap.default;
 
 <div class="project-card">
   <div class="project-visual" style={`background: ${colors.bg}`}>
-    <div class="icon-wrap" style={`background: ${colors.icon}`}>{icon}</div>
+    <div class="icon-wrap" style={`background: ${colors.well}`}>{icon}</div>
   </div>
   <div class="project-arrow">↗</div>
   <div class="project-info">
     <div class="project-tags">
-      {tags.map(tag => <span class="project-tag">{tag}</span>)}
+      {tags.map((tag: string) => <span class="project-tag">{tag}</span>)}
     </div>
     <div class="project-name">{title}</div>
     <div class="project-desc">{description}</div>
@@ -29,19 +35,19 @@ const colors = colorMap[colorClass] || colorMap.default;
 
 <style>
   .project-card {
-    background: var(--bg-card);
+    background: var(--surface-card);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: all var(--dur-med) ease;
     cursor: pointer;
     position: relative;
   }
 
   .project-card:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transform: translateY(var(--lift-md));
+    box-shadow: var(--shadow-card-hover);
   }
 
   .project-visual {
@@ -55,12 +61,12 @@ const colors = colorMap[colorClass] || colorMap.default;
   .icon-wrap {
     width: 80px;
     height: 80px;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    transition: transform 0.4s ease;
+    transition: transform var(--dur-med) ease;
   }
 
   .project-card:hover .icon-wrap { transform: scale(1.1); }
@@ -71,50 +77,51 @@ const colors = colorMap[colorClass] || colorMap.default;
     right: 1.5rem;
     width: 36px;
     height: 36px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-secondary);
-    transition: all 0.3s;
+    transition: all var(--dur-fast);
   }
 
   .project-card:hover .project-arrow {
     border-color: var(--accent);
     color: var(--accent);
-    background: rgba(196, 240, 77, 0.08);
+    background: var(--accent-wash);
   }
 
   .project-info { padding: 1.8rem; }
 
   .project-tags {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+    flex-wrap: wrap;
   }
 
   .project-tag {
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-size: var(--text-3xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wider);
     text-transform: uppercase;
     color: var(--accent);
-    background: rgba(196, 240, 77, 0.08);
+    background: var(--accent-wash);
     padding: 0.3rem 0.7rem;
-    border-radius: 100px;
+    border-radius: var(--radius-pill);
   }
 
   .project-name {
     font-family: var(--font-display);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--text-title);
+    margin-bottom: var(--space-2);
     letter-spacing: -0.01em;
   }
 
   .project-desc {
-    font-size: 0.9rem;
+    font-size: var(--text-body);
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: var(--leading-normal);
   }
 </style>

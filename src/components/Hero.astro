@@ -1,9 +1,8 @@
 <section class="hero">
   <div class="hero-eyebrow">UIUX Designer · Front-End Developer</div>
   <h1>
-  Hello,I'm Hsin-En,Lin
-  <br/>
-  <em>An UIUX Designer,Developer and Artist</em>
+    Hello, I'm Hsin-En, Lin<br />
+    <em>An UIUX Designer, Developer and Artist</em>
   </h1>
   <p class="hero-description">
     嗨，我是林新恩。我熱衷於在使用者體驗、前端工程與視覺藝術之間，打造兼具美感與功能的數位產品。
@@ -29,9 +28,9 @@
   }
 
   .hero-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
+    font-size: var(--text-2xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
     color: var(--accent);
     margin-bottom: 1.5rem;
@@ -41,11 +40,12 @@
 
   h1 {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 7rem);
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    max-width: 900px;
+    font-size: var(--text-hero);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    max-width: var(--measure-display);
+    margin: 0;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.4s;
   }
@@ -57,9 +57,9 @@
 
   .hero-description {
     margin-top: 2rem;
-    font-size: 1.15rem;
+    font-size: var(--text-lead);
     color: var(--text-secondary);
-    max-width: 520px;
+    max-width: var(--measure-narrow);
     line-height: 1.8;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.6s;
@@ -69,6 +69,7 @@
     margin-top: 3rem;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.8s;
   }
@@ -77,7 +78,7 @@
     position: absolute;
     bottom: 3rem;
     left: 3rem;
-    font-size: 0.75rem;
+    font-size: var(--text-2xs);
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-secondary);

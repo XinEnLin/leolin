@@ -18,8 +18,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(20px);
-    background: rgba(10, 10, 11, 0.7);
+    backdrop-filter: blur(var(--blur-nav));
+    -webkit-backdrop-filter: blur(var(--blur-nav));
+    background: var(--nav-bg);
     border-bottom: 1px solid var(--border);
   }
 
