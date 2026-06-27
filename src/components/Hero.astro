@@ -1,20 +1,30 @@
-<section class="hero">
-  <div class="hero-eyebrow">UIUX Designer · Front-End Developer</div>
+<section class="hero" id="top">
+  <div class="hero-eyebrow">視覺／UI 設計師 · 前端與硬體實作</div>
   <h1>
-    Hello, I'm Hsin-En, Lin<br />
-    <em>An UIUX Designer, Developer and Artist</em>
+    <span class="zh">林新恩</span>
+    <em>Hsin-En Lin</em>
   </h1>
-  <p class="hero-description">
-    Hi, I'm Leo. I'm passionate about crafting digital products that are both beautiful and functional, working at the intersection of user experience, front-end engineering, and visual arts.
+  <p class="hero-tagline">
+    視覺／UI 設計師，能從品牌識別、海報、App 介面一路做到前端與硬體實作。
   </p>
+  <div class="hero-meta">
+    <span><span class="dot"></span><a href="mailto:xlin9857@gmail.com">xlin9857@gmail.com</a></span>
+    <span><span class="dot"></span><a href="tel:0900782414">0900 782 414</a></span>
+    <span><span class="dot"></span>嘉義 民雄</span>
+  </div>
   <div class="hero-cta">
-    <a href="#projects" class="btn btn-primary">瀏覽作品</a>
+    <a href="#works" class="btn btn-primary">查看作品</a>
     <a href="#contact" class="btn btn-outline">聯繫我</a>
   </div>
-  <br>
-  <div class="hero-scroll-hint">
-    <span class="scroll-line"></span>
-    向下滾動探索
+  <div class="hero-links">
+    <a href="https://cake.me/portfolios/3d42da" target="_blank" rel="noopener" class="hero-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      作品集 CakeResume
+    </a>
+    <a href="https://github.com/XinEnLin" target="_blank" rel="noopener" class="hero-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/></svg>
+      github.com/XinEnLin
+    </a>
   </div>
 </section>
 
@@ -24,7 +34,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 8rem 3rem 4rem;
+    padding: 9rem 3rem 5rem;
+    max-width: var(--container-max);
+    margin: 0 auto;
     position: relative;
   }
 
@@ -34,9 +46,9 @@
     letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.6rem;
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.2s;
+    animation: fadeUp 0.8s ease forwards 0.15s;
   }
 
   h1 {
@@ -45,60 +57,110 @@
     font-weight: var(--weight-regular);
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-tighter);
-    max-width: var(--measure-display);
     margin: 0;
+    max-width: 14ch;
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.4s;
+    animation: fadeUp 0.8s ease forwards 0.3s;
   }
+
+  h1 .zh { display: block; }
 
   h1 em {
     font-style: italic;
     color: var(--accent);
   }
 
-  .hero-description {
-    margin-top: 2rem;
+  .hero-tagline {
+    margin-top: 1.8rem;
     font-size: var(--text-lead);
     color: var(--text-secondary);
-    max-width: var(--measure-narrow);
     line-height: 1.8;
+    max-width: var(--measure-text);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.45s;
+  }
+
+  .hero-meta {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.4rem;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.6s;
   }
 
+  .hero-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .hero-meta a {
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+    transition: all var(--dur-fast);
+  }
+
+  .hero-meta a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
   .hero-cta {
-    margin-top: 3rem;
+    margin-top: 2.6rem;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.8s;
+    animation: fadeUp 0.8s ease forwards 0.75s;
   }
 
-  .hero-scroll-hint {
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    font-size: var(--text-2xs);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
+  .hero-links {
+    margin-top: 2.4rem;
     display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.8rem;
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards 1s;
+    animation: fadeUp 0.8s ease forwards 0.9s;
   }
 
-  .scroll-line {
-    width: 40px;
-    height: 1px;
-    background: var(--text-secondary);
-    animation: pulse 2s ease-in-out infinite;
+  .hero-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    transition: color var(--dur-fast);
+  }
+
+  .hero-link:hover { color: var(--accent); }
+
+  .hero-link svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
   }
 
   @media (max-width: 768px) {
-    .hero { padding: 7rem 1.5rem 3rem; }
-    .hero-scroll-hint { display: none; }
+    .hero { padding: 7.5rem 1.5rem 3rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-eyebrow, h1, .hero-tagline, .hero-meta, .hero-cta, .hero-links {
+      animation: none !important;
+      opacity: 1 !important;
+    }
   }
 </style>

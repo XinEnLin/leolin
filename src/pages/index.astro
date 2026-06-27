@@ -1,46 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-
-// 作品資料 — 之後要新增作品，只要在這裡加一筆就好
-const projects = [
-  {
-    title: '智慧杯墊專案',
-    description: '結合物聯網技術的智慧杯墊產品，從使用者需求出發，打造直覺化的飲水體驗。',
-    tags: ['IoT', 'UX Design'],
-    icon: '☕',
-    colorClass: 'blue',
-  },
-  {
-    title: '防災 APP',
-    description: '面向全民的防災應用程式，以清晰的資訊架構與即時通知，守護使用者安全。',
-    tags: ['App Design', 'UI/UX'],
-    icon: '🛡️',
-    colorClass: 'red',
-  },
-  {
-    title: '鳳梨 2D 像素遊戲',
-    description: '手繪像素風格的 2D 遊戲，融合台灣元素，充滿童趣與挑戰。',
-    tags: ['Game Dev', 'Pixel Art'],
-    icon: '🍍',
-    colorClass: 'green',
-  },
-  {
-    title: '包裝設計',
-    description: '從品牌識別到實體包裝的完整視覺設計，讓產品在貨架上脫穎而出。',
-    tags: ['Graphic Design', 'Branding'],
-    icon: '📦',
-    colorClass: 'orange',
-  },
-  {
-    title: '插圖創作',
-    description: '個人風格的插畫作品集，涵蓋角色設計、場景繪製與概念藝術。',
-    tags: ['Illustration', 'Art'],
-    icon: '🎨',
-    colorClass: 'purple',
-  },
-];
 ---
 
 <BaseLayout>
@@ -48,187 +8,499 @@ const projects = [
   <Hero />
 
   <!-- About -->
-  <section class="about" id="about">
-    <div class="reveal">
-      <div class="section-label">01 — 關於我</div>
-      <div class="section-title">跨領域的創作者</div>
+  <section class="about reveal" id="about">
+    <div class="section-head">
+      <div class="section-label">關於我</div>
+      <h2 class="section-title">從識別到介面，從程式到電路。</h2>
     </div>
     <div class="about-grid">
-      <div class="reveal">
+      <div>
         <div class="about-text">
-          <p>
-            我是林新恩（Leo Lin），一位結合 UIUX 設計、前端開發、平面設計與插畫藝術的跨領域設計師。
-          </p>
-          <p>
-            我相信好的設計不只是視覺上的美，更是解決問題的過程。從使用者研究到介面設計，從程式碼到像素級的視覺呈現，我享受每一個將想法轉化為現實的環節。
-          </p>
+          <p>視覺／UI 設計專長的資訊管理學系應屆畢業生，能從品牌識別、海報、App 介面一路做到前端與硬體實作。</p>
+          <p>曾主導兩項獲獎產品專題，從 0 到 1 完成設計、開發與上架，並長期擔任校內活動的美宣與攝影。</p>
         </div>
-        <div class="skills-list">
-          {['UI/UX Design', 'Figma', 'HTML / CSS / JS', 'React', 'Illustration', 'Graphic Design', 'Pixel Art', 'Packaging Design'].map(skill => (
-            <span class="skill-tag">{skill}</span>
-          ))}
-        </div>
+        <div class="about-status"><span class="pulse"></span>目前同時求職與自由接案中</div>
       </div>
-      <div class="about-stats reveal">
-        <div class="stat"><div class="stat-number">4+</div><div class="stat-label">專業領域</div></div>
-        <div class="stat"><div class="stat-number">5+</div><div class="stat-label">完成專案</div></div>
-        <div class="stat"><div class="stat-number">∞</div><div class="stat-label">創作熱忱</div></div>
-        <div class="stat"><div class="stat-number">1</div><div class="stat-label">網站重建工程</div></div>
+      <div class="about-aside">
+        <div class="stat-card"><div class="num">2</div><div class="lab">獲獎產品專題主導</div></div>
+        <div class="stat-card"><div class="num">16<span style="font-size:1.4rem"> 萬</span></div><div class="lab">創業補助金額</div></div>
+        <div class="stat-card"><div class="num">0→1</div><div class="lab">設計・開發・上架全包</div></div>
+        <div class="stat-card"><div class="num">3+</div><div class="lab">年校內活動美宣攝影</div></div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="projects" id="projects">
-    <div class="reveal">
-      <div class="section-label">02 — 精選作品</div>
-      <div class="section-title">每個專案都是一次冒險</div>
+  <!-- Featured Works -->
+  <section class="works" id="works">
+    <div class="section-head works-head reveal">
+      <div>
+        <div class="section-label">精選作品</div>
+        <h2 class="section-title">每個專案，從 0 到 1。</h2>
+      </div>
+      <a href="https://cake.me/portfolios/3d42da" target="_blank" rel="noopener" class="btn btn-outline">完整作品集 ↗</a>
     </div>
-    <div class="projects-grid">
-      {projects.map(project => (
-        <div class="reveal">
-          <ProjectCard {...project} />
+
+    <div class="works-grid">
+
+      <!-- Work 1 -->
+      <article class="work reveal">
+        <div class="work-visual">
+          <div class="work-index">01</div>
+          <div class="slot-bg" style="--tint: rgba(108,140,255,0.14)"></div>
+          <image-slot id="work-longzaiying" shape="rect" placeholder="拖入 攏災影 App 截圖／主視覺"></image-slot>
         </div>
-      ))}
+        <div class="work-body">
+          <div class="work-role">防災避難 App · <b>美術宣傳負責人</b> · 大三–至今</div>
+          <h3 class="work-title">攏災影</h3>
+          <p class="work-sub">App UI、品牌識別、Logo 與吉祥物設計，以及宣傳影片製作。</p>
+          <div class="work-metrics">
+            <div class="metric"><div class="mv"><em>16</em> 萬</div><div class="ml">創業補助</div></div>
+            <div class="metric"><div class="mv"><em>114</em> 年度</div><div class="ml">實戰模擬平台入選團隊</div></div>
+          </div>
+          <div class="award-row">
+            <span class="award">第二梯次 大專院校實戰模擬平台</span>
+            <span class="award">創業補助 16 萬元</span>
+          </div>
+          <ul class="work-points">
+            <li>負責 App UI 設計（Figma）與品牌識別，設計 Logo 與吉祥物。</li>
+            <li>製作並剪輯品牌宣傳短片、經營產品社群平台。</li>
+          </ul>
+          <div class="work-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Illustrator</span>
+            <span class="tag">Clip Studio Paint</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Work 2 -->
+      <article class="work reveal">
+        <div class="work-visual">
+          <div class="work-index">02</div>
+          <div class="slot-bg" style="--tint: rgba(77,240,150,0.14)"></div>
+          <image-slot id="work-dayday" shape="rect" placeholder="拖入 DayDay 補給站 杯墊／App 截圖"></image-slot>
+        </div>
+        <div class="work-body">
+          <div class="work-role">AIoT 智慧杯墊專題 · <b>裝置開發與視覺設計負責人</b> · 大四</div>
+          <h3 class="work-title">DayDay 補給站</h3>
+          <p class="work-sub">智慧杯墊從概念到成品，3D 建模、硬體開發與配套 App 一手包辦。</p>
+          <div class="work-metrics">
+            <div class="metric"><div class="mv"><em>第 5</em> 名</div><div class="ml">系展 15 組中</div></div>
+            <div class="metric"><div class="mv">Google Play</div><div class="ml">App 已上架封測</div></div>
+          </div>
+          <div class="award-row">
+            <span class="award">系展 15 組第 5 名</span>
+            <span class="award">Google Play 封測上架</span>
+          </div>
+          <ul class="work-points">
+            <li>主導智慧杯墊從概念到成品，完成原型 3D 建模與硬體開發。</li>
+            <li>設計並開發配套 App，Figma 製作 UI、React Native 實作介面。</li>
+            <li>包辦專題識別與宣傳（Logo、海報設計）。</li>
+          </ul>
+          <div class="work-tags">
+            <span class="tag">Blender</span>
+            <span class="tag">Fusion</span>
+            <span class="tag">樹莓派 Pico W</span>
+            <span class="tag">Figma</span>
+            <span class="tag">React Native</span>
+            <span class="tag">Illustrator</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Work 3 -->
+      <article class="work reveal">
+        <div class="work-visual">
+          <div class="work-index">03</div>
+          <div class="slot-bg" style="--tint: var(--accent-wash)"></div>
+          <image-slot id="work-langcenter" shape="rect" placeholder="拖入 語言中心網頁截圖"></image-slot>
+        </div>
+        <div class="work-body">
+          <div class="work-role">校內語言中心 · <b>網頁重構工讀生</b> · 大三</div>
+          <h3 class="work-title">語言中心網頁重構</h3>
+          <p class="work-sub">以前端技術優化介面，並協助建置中、英文雙語網頁。</p>
+          <div class="work-metrics">
+            <div class="metric"><div class="mv"><em>中・英</em></div><div class="ml">雙語網頁建置</div></div>
+          </div>
+          <ul class="work-points">
+            <li>以 HTML／CSS／JavaScript 優化校內語言中心網頁介面。</li>
+            <li>協助建置中、英文雙語網頁。</li>
+          </ul>
+          <div class="work-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
   <!-- Experience -->
-  <section class="experience" id="experience">
-    <div class="reveal">
-      <div class="section-label">03 — 經歷</div>
-      <div class="section-title">成長軌跡</div>
+  <section class="reveal" id="experience">
+    <div class="section-head">
+      <div class="section-label">設計與活動經歷</div>
+      <h2 class="section-title">在校園裡，把作品做進真實場景。</h2>
     </div>
     <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-time">重點專案</div>
-        <div class="timeline-title">中正大學語言中心網站重建工程</div>
-        <div class="timeline-subtitle">前端開發 · UI/UX 設計</div>
-        <div class="timeline-desc">
-          負責語言中心官方網站的全面重建，從資訊架構規劃、介面設計到前端實作，提升了網站的使用體驗與視覺品質。
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-when">大一–大二</div>
+        <div class="tl-title">紫荊書院　數位媒體部幹部</div>
+        <div class="tl-role">美編・攝影・主持</div>
+        <div class="tl-desc">第五屆院刊美編，以 InDesign 完成四篇專欄排版並赴嘉義 2 間獨立書店募資；負責院友回娘家、生涯知能課程、第 16 屆迎新等多場活動之主視覺、美宣與攝影，並擔任主持。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-when">大二上</div>
+        <div class="tl-title">系學會　美宣長</div>
+        <div class="tl-role">視覺設計</div>
+        <div class="tl-desc">設計新生資訊圖文與系服宣傳素材（Canva）。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-when">大二上</div>
+        <div class="tl-title">三系聯合宿營（資管・犯防・哲學）　美宣組</div>
+        <div class="tl-role">視覺設計・活動攝影</div>
+        <div class="tl-desc">設計活動 Logo、製作大地遊戲道具並擔任活動攝影。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="reveal" id="skills">
+    <div class="section-head">
+      <div class="section-label">技能</div>
+      <h2 class="section-title">設計、開發、硬體，一條龍。</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>視覺設計</h4>
+        <div class="tags">
+          <span class="skill-tag">Illustrator</span>
+          <span class="skill-tag">InDesign</span>
+          <span class="skill-tag">Clip Studio Paint</span>
+          <span class="skill-tag">Canva</span>
         </div>
       </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-time">持續精進</div>
-        <div class="timeline-title">跨領域自主學習</div>
-        <div class="timeline-subtitle">UIUX · 前端 · 平面設計 · 插畫</div>
-        <div class="timeline-desc">
-          持續在設計與開發領域深耕，透過實作專案累積經驗，追求技術與美學的極致融合。
+      <div class="skill-group">
+        <h4>UI 設計</h4>
+        <div class="tags">
+          <span class="skill-tag">Figma</span>
         </div>
+      </div>
+      <div class="skill-group">
+        <h4>開發</h4>
+        <div class="tags">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React Native</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>3D ・ 硬體</h4>
+        <div class="tags">
+          <span class="skill-tag">Blender</span>
+          <span class="skill-tag">Fusion</span>
+          <span class="skill-tag">樹莓派 Pico W</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>影像</h4>
+        <div class="tags">
+          <span class="skill-tag">活動攝影</span>
+          <span class="skill-tag">短片拍攝與剪輯</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>語言 ・ 軟實力</h4>
+        <div class="tags">
+          <span class="skill-tag">中文（母語）</span>
+          <span class="skill-tag">團隊溝通協作</span>
+          <span class="skill-tag">危機應變</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="reveal" id="education">
+    <div class="section-head">
+      <div class="section-label">學歷與證照</div>
+      <h2 class="section-title">學術根基。</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-kind">學歷</div>
+        <div class="edu-name">國立中正大學　資訊管理學系</div>
+        <div class="edu-meta">2022.09 – 2026.12（預計）<br />跨校修習雲林科技大學設計課程</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-kind">證照</div>
+        <div class="edu-name">色彩規劃管理師　初級能力鑑定</div>
+        <div class="edu-meta">經濟部產業發展署<br />2026.01</div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="reveal">
-      <div class="section-label">04 — 聯繫</div>
-      <div class="section-title">有想法？讓我們聊聊</div>
-      <p class="contact-desc">無論是合作邀約、專案討論，或只是想打聲招呼，都歡迎聯繫我。</p>
-    </div>
-    <div class="contact-links reveal">
-      <a href="mailto:hello@leolin.dev" class="contact-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Email
+  <section class="contact reveal" id="contact">
+    <div class="section-label" style="display:inline-block">聯繫</div>
+    <h2 class="section-title">有專案想法？讓我們聊聊。</h2>
+    <p class="contact-lead">無論是全職機會、設計合作或自由接案，都歡迎來信。</p>
+    <div class="contact-links">
+      <a href="mailto:xlin9857@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        xlin9857@gmail.com
       </a>
-      <a href="https://github.com/XinEnLin" target="_blank" class="contact-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/></svg>
+      <a href="tel:0900782414" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        0900 782 414
+      </a>
+      <a href="https://cake.me/portfolios/3d42da" target="_blank" rel="noopener" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        作品集
+      </a>
+      <a href="https://github.com/XinEnLin" target="_blank" rel="noopener" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/></svg>
         GitHub
-      </a>
-      <a href="https://www.linkedin.com/" target="_blank" class="contact-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
       </a>
     </div>
   </section>
 
+  <script is:inline src="/image-slot.js"></script>
+
 </BaseLayout>
 
 <style>
-  /* ── About ── */
-  .about { border-top: 1px solid var(--border); }
+  /* Section separators */
+  section + section { border-top: 1px solid var(--border); }
 
+  /* ── About ── */
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr;
     gap: 4rem;
     align-items: start;
   }
 
   .about-text {
+    font-size: var(--text-base);
     color: var(--text-secondary);
-    font-size: 1.05rem;
-    line-height: 1.9;
+    line-height: var(--leading-relaxed);
   }
 
-  .about-text p + p { margin-top: 1.5rem; }
+  .about-text p + p { margin-top: 1.4rem; }
 
-  .skills-list {
+  .about-aside { display: grid; gap: 1rem; }
+
+  /* ── Featured Works ── */
+  .works-head {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 2rem;
-  }
-
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: flex-end;
     gap: 2rem;
+    flex-wrap: wrap;
   }
 
-  .stat {
-    padding: 2rem;
+  .works-head .section-title { margin-bottom: 0; }
+
+  .works-grid { display: grid; gap: 2.5rem; }
+
+  .work {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
     border: 1px solid var(--border);
-    border-radius: 12px;
-    transition: all 0.3s;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--surface-card);
+    transition: all var(--dur-med) ease;
   }
 
-  .stat:hover {
+  .work:hover {
     border-color: var(--accent);
-    background: var(--bg-card);
+    transform: translateY(var(--lift-md));
+    box-shadow: var(--shadow-card-hover);
   }
 
-  .stat-number {
+  .work:nth-child(even) .work-visual { order: 2; }
+
+  .work-visual {
+    position: relative;
+    min-height: 360px;
+  }
+
+  .work-visual image-slot {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slot-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      repeating-linear-gradient(45deg, var(--tint) 0 12px, transparent 12px 24px),
+      var(--surface-card-hover);
+  }
+
+  .work-index {
+    position: absolute;
+    top: 1.4rem;
+    left: 1.6rem;
+    z-index: 3;
     font-family: var(--font-display);
-    font-size: 2.8rem;
+    font-size: 1.5rem;
     color: var(--accent);
-    line-height: 1;
+    background: var(--nav-bg);
+    backdrop-filter: blur(8px);
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
   }
 
-  .stat-label {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
+  .work-body {
+    padding: 2.4rem 2.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work-role {
+    font-size: var(--text-2xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
     color: var(--text-secondary);
-    letter-spacing: 0.05em;
+    margin-bottom: 0.7rem;
+  }
+
+  .work-role b { color: var(--accent); font-weight: var(--weight-medium); }
+
+  .work-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.4rem;
+  }
+
+  .work-sub {
+    font-size: var(--text-body);
+    color: var(--text-secondary);
+    margin-bottom: 1.4rem;
+  }
+
+  .work-metrics {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .metric .mv {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  .metric .mv em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .metric .ml {
+    margin-top: 0.35rem;
+    font-size: var(--text-2xs);
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
     text-transform: uppercase;
   }
 
-  /* ── Projects ── */
-  .projects { border-top: 1px solid var(--border); }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 1.5rem;
+  .award-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
   }
 
-  /* ── Experience ── */
-  .experience { border-top: 1px solid var(--border); }
+  .award {
+    font-size: var(--text-3xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wide);
+    color: var(--accent);
+    background: var(--accent-wash);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-pill);
+  }
 
-  .timeline { max-width: 700px; }
+  .work-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.6rem;
+    display: grid;
+    gap: 0.55rem;
+  }
 
-  .timeline-item {
+  .work-points li {
     position: relative;
-    padding-left: 3rem;
-    padding-bottom: 3rem;
+    padding-left: 1.2rem;
+    font-size: var(--text-body);
+    color: var(--text-secondary);
+    line-height: var(--leading-normal);
+  }
+
+  .work-points li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .work-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 0.6rem;
+  }
+
+  .work-tags .tag {
+    font-size: var(--text-2xs);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    padding: 0.35rem 0.85rem;
+    transition: all var(--dur-fast);
+  }
+
+  .work:hover .work-tags .tag { border-color: var(--border-strong); }
+
+  /* ── Experience Timeline ── */
+  .timeline { max-width: var(--measure-timeline); }
+
+  .tl-item {
+    position: relative;
+    padding-left: 2.2rem;
+    padding-bottom: 2.4rem;
     border-left: 1px solid var(--border);
   }
 
-  .timeline-item:last-child { padding-bottom: 0; }
+  .tl-item:last-child { padding-bottom: 0; }
 
-  .timeline-dot {
+  .tl-dot {
     position: absolute;
     left: -5px;
     top: 4px;
@@ -239,78 +511,153 @@ const projects = [
     box-shadow: var(--shadow-dot-glow);
   }
 
-  .timeline-time {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
+  .tl-when {
+    font-size: var(--text-2xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
-  .timeline-title {
+  .tl-title {
     font-family: var(--font-display);
-    font-size: 1.4rem;
+    font-size: var(--text-title-sm);
+    margin-bottom: 0.15rem;
+  }
+
+  .tl-role {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: 0.7rem;
+  }
+
+  .tl-desc {
+    font-size: var(--text-body);
+    color: var(--text-secondary);
+    line-height: var(--leading-normal);
+  }
+
+  /* ── Skills ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.4rem 2.4rem;
+  }
+
+  .skill-group h4 {
+    font-size: var(--text-2xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--text);
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-group .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  /* ── Education ── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+  }
+
+  .edu-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-card);
+    transition: all var(--dur-fast);
+  }
+
+  .edu-card:hover { border-color: var(--accent); }
+
+  .edu-kind {
+    font-size: var(--text-2xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.7rem;
+  }
+
+  .edu-name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
     margin-bottom: 0.3rem;
   }
 
-  .timeline-subtitle {
-    font-size: 0.9rem;
+  .edu-meta {
+    font-size: var(--text-body);
     color: var(--text-secondary);
-    margin-bottom: 0.8rem;
-  }
-
-  .timeline-desc {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: var(--leading-normal);
   }
 
   /* ── Contact ── */
-  .contact {
-    border-top: 1px solid var(--border);
-    text-align: center;
-  }
+  .contact { text-align: center; }
 
   .contact .section-title {
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
+    max-width: 16ch;
+    margin: 0 auto 1.2rem;
   }
 
-  .contact-desc {
+  .contact-lead {
     color: var(--text-secondary);
-    font-size: 1.05rem;
-    margin-bottom: 3rem;
+    font-size: var(--text-lead);
+    margin: 0 auto 2.6rem;
+    max-width: var(--measure-text);
   }
 
   .contact-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.9rem;
     flex-wrap: wrap;
   }
 
   .contact-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.8rem 1.6rem;
+    padding: 0.85rem 1.7rem;
     border: 1px solid var(--border);
-    border-radius: 100px;
-    font-size: 0.85rem;
+    border-radius: var(--radius-pill);
+    font-size: var(--text-sm);
     color: var(--text-secondary);
-    transition: all 0.3s;
+    transition: all var(--dur-fast);
   }
+
+  .contact-link svg { width: 17px; height: 17px; flex-shrink: 0; }
 
   .contact-link:hover {
     border-color: var(--accent);
     color: var(--accent);
     background: var(--accent-wash-soft);
+    transform: translateY(var(--lift-sm));
   }
 
-  /* ── Mobile ── */
-  @media (max-width: 768px) {
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .work { grid-template-columns: 1fr; }
+    .work:nth-child(even) .work-visual { order: 0; }
+    .work-visual { min-height: 240px; }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .projects-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .works-head { flex-direction: column; align-items: flex-start; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .work-body { padding: 1.8rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
   }
 </style>

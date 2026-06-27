@@ -1,0 +1,12 @@
+{
+  "projectId": "9b7a9a79-bc18-4fed-8052-d098f6db3e90",
+  "pkg": "@leolin/ui",
+  "globalName": "LeolinUI",
+  "shape": "package",
+  "buildCmd": "cd packages/ui && npm run build",
+  "runtimeFontPrefixes": ["DM Sans", "Instrument Serif", "Noto Sans TC", "Noto Serif TC"],
+  "readmeHeader": ".design-sync/conventions.md",
+  "overrides": {
+    "Navbar": { "cardMode": "single", "primaryStory": "WithLogo" }
+  }
+}

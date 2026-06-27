@@ -2,14 +2,16 @@
 import logo from '../assets/logo.png';
 ---
 <nav>
-  <a href="https://www.instagram.com/leo_lin4ni" class="nav-logo">
-    <img src={logo.src} alt="Hsin-En Lin" class="logo-img" />
+  <a href="#top" class="nav-logo">
+    <img src={logo.src} alt="林新恩" class="logo-img" />
+    <span class="nav-name">林新恩</span>
   </a>
   <div class="nav-links">
     <a href="#about">關於</a>
-    <a href="#projects">作品</a>
+    <a href="#works">作品</a>
     <a href="#experience">經歷</a>
-    <a href="#contact">聯繫</a>
+    <a href="#skills">技能</a>
+    <a href="#contact" class="nav-cta">聯繫我</a>
   </div>
 </nav>
 
@@ -17,9 +19,10 @@ import logo from '../assets/logo.png';
   nav {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 100;
-    padding: 1.5rem 3rem;
+    padding: 1.2rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,29 +35,53 @@ import logo from '../assets/logo.png';
   .nav-logo {
     display: flex;
     align-items: center;
+    gap: 0.7rem;
   }
 
   .logo-img {
-    height: 2rem;
+    height: 1.9rem;
     width: auto;
     display: block;
   }
 
-  .nav-links { display: flex; gap: 2.5rem; }
+  .nav-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    align-items: center;
+  }
 
   .nav-links a {
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
+    font-size: var(--text-2xs);
+    font-weight: var(--weight-regular);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-secondary);
-    transition: color 0.3s;
+    transition: color var(--dur-fast);
   }
 
   .nav-links a:hover { color: var(--accent); }
 
+  .nav-links a.nav-cta {
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 0.45rem 1.1rem;
+    border-radius: var(--radius-pill);
+  }
+
+  .nav-links a.nav-cta:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
+    .nav-name { display: none; }
+    .nav-links a:not(.nav-cta) { display: none; }
   }
 </style>
