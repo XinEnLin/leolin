@@ -11,13 +11,13 @@
   --ink-100:   #1f1f24;
   --ink-000:   #0a0a0b;
 
-  /* Lime accent */
-  --lime-500: #c4f04d;
-  --lime-600: #a3cc2e;
-  --lime-700: #84a821;
-  --lime-glow: rgba(163, 204, 46, 0.25);
-  --lime-wash: rgba(163, 204, 46, 0.12);
-  --lime-wash-soft: rgba(163, 204, 46, 0.07);
+  /* Pink accent */
+  --lime-500: #f2b0c5;
+  --lime-600: #ea98b1;
+  --lime-700: #d67a97;
+  --lime-glow: rgba(234, 152, 177, 0.25);
+  --lime-wash: rgba(234, 152, 177, 0.12);
+  --lime-wash-soft: rgba(234, 152, 177, 0.07);
 
   /* Project tints */
   --proj-blue:   #6c8cff;
@@ -114,8 +114,8 @@
 
   /* Effects */
   --shadow-card-hover:   0 16px 40px rgba(20, 20, 30, 0.10);
-  --shadow-button-hover: 0 8px 24px rgba(163, 204, 46, 0.30);
-  --shadow-dot-glow:     0 0 12px rgba(163, 204, 46, 0.35);
+  --shadow-button-hover: 0 8px 24px rgba(234, 152, 177, 0.30);
+  --shadow-dot-glow:     0 0 12px rgba(234, 152, 177, 0.35);
 
   --blur-nav: 20px;
   --nav-bg:   rgba(255, 255, 255, 0.72);
