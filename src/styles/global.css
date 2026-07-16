@@ -11,13 +11,13 @@
   --ink-100:   #1f1f24;
   --ink-000:   #0a0a0b;
 
-  /* Pink accent */
-  --lime-500: #f2b0c5;
-  --lime-600: #ea98b1;
-  --lime-700: #d67a97;
-  --lime-glow: rgba(234, 152, 177, 0.25);
-  --lime-wash: rgba(234, 152, 177, 0.12);
-  --lime-wash-soft: rgba(234, 152, 177, 0.07);
+  /* Gray accent */
+  --gray-500: #d9d9d9;
+  --gray-600: #cccccc;
+  --gray-700: #b3b3b3;
+  --gray-glow: rgba(204, 204, 204, 0.25);
+  --gray-wash: rgba(204, 204, 204, 0.12);
+  --gray-wash-soft: rgba(204, 204, 204, 0.07);
 
   /* Project tints */
   --proj-blue:   #6c8cff;
@@ -39,14 +39,14 @@
   --text-secondary:   var(--ink-300);
   --text-on-accent:   var(--ink-000);
 
-  --accent:           var(--lime-600);
-  --accent-bright:    var(--lime-500);
-  --accent-dim:       var(--lime-700);
-  --accent-wash:      var(--lime-wash);
-  --accent-wash-soft: var(--lime-wash-soft);
-  --accent-glow:      var(--lime-glow);
+  --accent:           var(--gray-600);
+  --accent-bright:    var(--gray-500);
+  --accent-dim:       var(--gray-700);
+  --accent-wash:      var(--gray-wash);
+  --accent-wash-soft: var(--gray-wash-soft);
+  --accent-glow:      var(--gray-glow);
 
-  --selection-bg: var(--lime-500);
+  --selection-bg: var(--gray-500);
   --selection-fg: var(--ink-000);
 
   /* Typography */
@@ -114,8 +114,8 @@
 
   /* Effects */
   --shadow-card-hover:   0 16px 40px rgba(20, 20, 30, 0.10);
-  --shadow-button-hover: 0 8px 24px rgba(234, 152, 177, 0.30);
-  --shadow-dot-glow:     0 0 12px rgba(234, 152, 177, 0.35);
+  --shadow-button-hover: 0 8px 24px rgba(204, 204, 204, 0.30);
+  --shadow-dot-glow:     0 0 12px rgba(204, 204, 204, 0.35);
 
   --blur-nav: 20px;
   --nav-bg:   rgba(255, 255, 255, 0.72);
