@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import knowzaiBanner from '../assets/knowzai-banner.png';
+import daydayBanner from '../assets/dayday-banner.png';
 ---
 
 <BaseLayout>
@@ -11,20 +13,20 @@ import Hero from '../components/Hero.astro';
   <section class="about reveal" id="about">
     <div class="section-head">
       <div class="section-label">關於我</div>
-      <h2 class="section-title">從識別到介面，從程式到電路。</h2>
+      <h2 class="section-title">從品牌識別到行銷企劃，從系統開發到使用體驗。</h2>
     </div>
     <div class="about-grid">
       <div>
         <div class="about-text">
-          <p>視覺／UI 設計專長的資訊管理學系應屆畢業生，能從品牌識別、海報、App 介面一路做到前端與硬體實作。</p>
-          <p>曾主導兩項獲獎產品專題，從 0 到 1 完成設計、開發與上架，並長期擔任校內活動的美宣與攝影。</p>
+          <p>視覺／UIUX 設計專長的資訊管理學系應屆畢業生。</p>
+          <p>曾參與兩項產品專題，從 0 到 1 完成設計、開發與上架，並曾擔任校內活動的美宣與攝影。</p>
         </div>
         <div class="about-status"><span class="pulse"></span>目前同時求職與自由接案中</div>
       </div>
       <div class="about-aside">
         <div class="stat-card"><div class="num">2</div><div class="lab">獲獎產品專題主導</div></div>
         <div class="stat-card"><div class="num">16<span style="font-size:1.4rem"> 萬</span></div><div class="lab">創業補助金額</div></div>
-        <div class="stat-card"><div class="num">0→1</div><div class="lab">設計・開發・上架全包</div></div>
+        <div class="stat-card"><div class="num">0→1</div><div class="lab">設計・品牌行銷</div></div>
         <div class="stat-card"><div class="num">3+</div><div class="lab">年校內活動美宣攝影</div></div>
       </div>
     </div>
@@ -47,28 +49,27 @@ import Hero from '../components/Hero.astro';
         <div class="work-visual">
           <div class="work-index">01</div>
           <div class="slot-bg" style="--tint: rgba(108,140,255,0.14)"></div>
-          <image-slot id="work-longzaiying" shape="rect" placeholder="拖入 攏災影 App 截圖／主視覺"></image-slot>
+          <img src={knowzaiBanner.src} alt="攏災影 App 主視覺" class="work-img" loading="lazy" />
         </div>
         <div class="work-body">
-          <div class="work-role">防災避難 App · <b>美術宣傳負責人</b> · 大三–至今</div>
+          <div class="work-role">防災避難 App · <b>品牌行銷負責人</b> · 大三–至今</div>
           <h3 class="work-title">攏災影</h3>
-          <p class="work-sub">App UI、品牌識別、Logo 與吉祥物設計，以及宣傳影片製作。</p>
+          <p class="work-sub">App UI、吉祥物設計，以及宣傳影片製作。</p>
           <div class="work-metrics">
             <div class="metric"><div class="mv"><em>16</em> 萬</div><div class="ml">創業補助</div></div>
-            <div class="metric"><div class="mv"><em>114</em> 年度</div><div class="ml">實戰模擬平台入選團隊</div></div>
+            <div class="metric"><div class="mv"><em>114</em> 年度第二梯次</div><div class="ml">大專院校實戰模擬平台入選團隊</div></div>
           </div>
           <div class="award-row">
             <span class="award">第二梯次 大專院校實戰模擬平台</span>
             <span class="award">創業補助 16 萬元</span>
           </div>
           <ul class="work-points">
-            <li>負責 App UI 設計（Figma）與品牌識別，設計 Logo 與吉祥物。</li>
+            <li>負責 App UI 、吉祥物設計。</li>
             <li>製作並剪輯品牌宣傳短片、經營產品社群平台。</li>
           </ul>
           <div class="work-tags">
             <span class="tag">Figma</span>
-            <span class="tag">Illustrator</span>
-            <span class="tag">Clip Studio Paint</span>
+            <span class="tag">Affinity</span>
           </div>
         </div>
       </article>
@@ -78,14 +79,14 @@ import Hero from '../components/Hero.astro';
         <div class="work-visual">
           <div class="work-index">02</div>
           <div class="slot-bg" style="--tint: rgba(77,240,150,0.14)"></div>
-          <image-slot id="work-dayday" shape="rect" placeholder="拖入 DayDay 補給站 杯墊／App 截圖"></image-slot>
+          <img src={daydayBanner.src} alt="DayDay 補給站 主視覺" class="work-img" loading="lazy" />
         </div>
         <div class="work-body">
           <div class="work-role">AIoT 智慧杯墊專題 · <b>裝置開發與視覺設計負責人</b> · 大四</div>
           <h3 class="work-title">DayDay 補給站</h3>
           <p class="work-sub">智慧杯墊從概念到成品，3D 建模、硬體開發與配套 App 一手包辦。</p>
           <div class="work-metrics">
-            <div class="metric"><div class="mv"><em>第 5</em> 名</div><div class="ml">系展 15 組中</div></div>
+            
             <div class="metric"><div class="mv">Google Play</div><div class="ml">App 已上架封測</div></div>
           </div>
           <div class="award-row">
@@ -93,7 +94,7 @@ import Hero from '../components/Hero.astro';
             <span class="award">Google Play 封測上架</span>
           </div>
           <ul class="work-points">
-            <li>主導智慧杯墊從概念到成品，完成原型 3D 建模與硬體開發。</li>
+            <li>從概念到成品，完成原型 3D 建模與硬體開發。</li>
             <li>設計並開發配套 App，Figma 製作 UI、React Native 實作介面。</li>
             <li>包辦專題識別與宣傳（Logo、海報設計）。</li>
           </ul>
@@ -108,31 +109,7 @@ import Hero from '../components/Hero.astro';
         </div>
       </article>
 
-      <!-- Work 3 -->
-      <article class="work reveal">
-        <div class="work-visual">
-          <div class="work-index">03</div>
-          <div class="slot-bg" style="--tint: var(--accent-wash)"></div>
-          <image-slot id="work-langcenter" shape="rect" placeholder="拖入 語言中心網頁截圖"></image-slot>
-        </div>
-        <div class="work-body">
-          <div class="work-role">校內語言中心 · <b>網頁重構工讀生</b> · 大三</div>
-          <h3 class="work-title">語言中心網頁重構</h3>
-          <p class="work-sub">以前端技術優化介面，並協助建置中、英文雙語網頁。</p>
-          <div class="work-metrics">
-            <div class="metric"><div class="mv"><em>中・英</em></div><div class="ml">雙語網頁建置</div></div>
-          </div>
-          <ul class="work-points">
-            <li>以 HTML／CSS／JavaScript 優化校內語言中心網頁介面。</li>
-            <li>協助建置中、英文雙語網頁。</li>
-          </ul>
-          <div class="work-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </div>
-      </article>
+      
 
     </div>
   </section>
@@ -141,7 +118,7 @@ import Hero from '../components/Hero.astro';
   <section class="reveal" id="experience">
     <div class="section-head">
       <div class="section-label">設計與活動經歷</div>
-      <h2 class="section-title">在校園裡，把作品做進真實場景。</h2>
+      <h2 class="section-title">在校園裡，把設計應用到真實場景。</h2>
     </div>
     <div class="timeline">
       <div class="tl-item">
@@ -156,14 +133,21 @@ import Hero from '../components/Hero.astro';
         <div class="tl-when">大二上</div>
         <div class="tl-title">系學會　美宣長</div>
         <div class="tl-role">視覺設計</div>
-        <div class="tl-desc">設計新生資訊圖文與系服宣傳素材（Canva）。</div>
+        <div class="tl-desc">設計新生資訊圖文與系服宣傳素材。</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-when">大二上</div>
-        <div class="tl-title">三系聯合宿營（資管・犯防・哲學）　美宣組</div>
+        <div class="tl-title">三系聯合宿營　美宣組</div>
         <div class="tl-role">視覺設計・活動攝影</div>
         <div class="tl-desc">設計活動 Logo、製作大地遊戲道具並擔任活動攝影。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-when">大三</div>
+        <div class="tl-title">校內語言中心網頁工讀生</div>
+        <div class="tl-role">網頁重構</div>
+        <div class="tl-desc">以 HTML／CSS／JavaScript 優化校內語言中心網頁介面，並協助建置中、英文雙語網頁。</div>
       </div>
     </div>
   </section>
@@ -172,20 +156,19 @@ import Hero from '../components/Hero.astro';
   <section class="reveal" id="skills">
     <div class="section-head">
       <div class="section-label">技能</div>
-      <h2 class="section-title">設計、開發、硬體，一條龍。</h2>
+      <h2 class="section-title">設計、開發一條龍。</h2>
     </div>
     <div class="skills-grid">
       <div class="skill-group">
         <h4>視覺設計</h4>
         <div class="tags">
+          <span class="skill-tag">Affinity</span>
           <span class="skill-tag">Illustrator</span>
-          <span class="skill-tag">InDesign</span>
-          <span class="skill-tag">Clip Studio Paint</span>
           <span class="skill-tag">Canva</span>
         </div>
       </div>
       <div class="skill-group">
-        <h4>UI 設計</h4>
+        <h4>UIUX 設計</h4>
         <div class="tags">
           <span class="skill-tag">Figma</span>
         </div>
@@ -199,25 +182,17 @@ import Hero from '../components/Hero.astro';
           <span class="skill-tag">React Native</span>
         </div>
       </div>
-      <div class="skill-group">
-        <h4>3D ・ 硬體</h4>
-        <div class="tags">
-          <span class="skill-tag">Blender</span>
-          <span class="skill-tag">Fusion</span>
-          <span class="skill-tag">樹莓派 Pico W</span>
-        </div>
-      </div>
+      
       <div class="skill-group">
         <h4>影像</h4>
         <div class="tags">
           <span class="skill-tag">活動攝影</span>
-          <span class="skill-tag">短片拍攝與剪輯</span>
+          <span class="skill-tag">影片拍攝與剪輯</span>
         </div>
       </div>
       <div class="skill-group">
         <h4>語言 ・ 軟實力</h4>
         <div class="tags">
-          <span class="skill-tag">中文（母語）</span>
           <span class="skill-tag">團隊溝通協作</span>
           <span class="skill-tag">危機應變</span>
         </div>
@@ -337,6 +312,16 @@ import Hero from '../components/Hero.astro';
     inset: 0;
     width: 100%;
     height: 100%;
+  }
+
+  .work-img {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .slot-bg {
